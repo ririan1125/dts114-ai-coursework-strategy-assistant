@@ -75,3 +75,13 @@ def test_uml_endpoint_returns_plantuml():
     assert data["format"] == "plantuml"
     assert "@startuml" in data["diagram"]
 
+
+def test_rendered_uml_svg_endpoints_are_available():
+    test_client = client()
+    use_case = test_client.get("/api/uml/use-case.svg")
+    class_diagram = test_client.get("/api/uml/class.svg")
+    assert use_case.status_code == 200
+    assert class_diagram.status_code == 200
+    assert "image/svg+xml" in use_case.content_type
+    assert "Generated UML use case diagram" in use_case.text
+    assert "Generated UML Class Diagram" in class_diagram.text

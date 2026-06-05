@@ -133,10 +133,25 @@
       <h2 id="docsTitle">Generated SDLC Snapshot</h2>
       <pre id="docsOutput">{}</pre>
     </section>
+
+    <section class="panel uml-panel" aria-labelledby="umlTitle">
+      <div class="panel-heading">
+        <h2 id="umlTitle">Generated UML Diagrams</h2>
+      </div>
+      <div class="uml-grid">
+        <figure class="uml-card">
+          <figcaption>Use Case Diagram</figcaption>
+          <img src="{{ url_for('use_case_uml_svg') }}" alt="Generated UML use case diagram for the AI Coursework Strategy Assistant">
+        </figure>
+        <figure class="uml-card">
+          <figcaption>Class Diagram</figcaption>
+          <img src="{{ url_for('class_uml_svg') }}" alt="Generated UML class diagram for the AI Coursework Strategy Assistant">
+        </figure>
+      </div>
+    </section>
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
-

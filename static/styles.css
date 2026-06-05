@@ -283,6 +283,39 @@ li {
   grid-column: 1 / -1;
 }
 
+.uml-panel {
+  grid-column: 1 / -1;
+}
+
+.uml-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.uml-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fbfdfb;
+}
+
+.uml-card figcaption {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 750;
+}
+
+.uml-card img {
+  display: block;
+  width: 100%;
+  min-height: 260px;
+  background: #ffffff;
+}
+
 pre {
   max-height: 360px;
   overflow: auto;
@@ -326,7 +359,8 @@ pre {
   .form-grid,
   .button-row,
   .result-columns,
-  .summary-grid {
+  .summary-grid,
+  .uml-grid {
     grid-template-columns: 1fr;
   }
 
@@ -334,4 +368,3 @@ pre {
     display: grid;
   }
 }
-

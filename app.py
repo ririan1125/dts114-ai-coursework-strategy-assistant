@@ -1,14 +1,16 @@
 from __future__ import annotations
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, Response, jsonify, render_template, request
 from flask_cors import CORS
 
 from assistant_engine import (
     analyze_task,
     call_llm_for_strategy,
     generate_class_puml,
+    generate_class_svg,
     generate_sdlc_documents,
     generate_use_case_puml,
+    generate_use_case_svg,
     validate_task_payload,
 )
 
@@ -87,6 +89,15 @@ def class_uml():
     return jsonify(format="plantuml", diagram=generate_class_puml()), 200
 
 
+@app.get("/api/uml/use-case.svg")
+def use_case_uml_svg():
+    return Response(generate_use_case_svg(), mimetype="image/svg+xml")
+
+
+@app.get("/api/uml/class.svg")
+def class_uml_svg():
+    return Response(generate_class_svg(), mimetype="image/svg+xml")
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5005, debug=False)
-
