@@ -1,0 +1,35 @@
+{
+  "user_stories": [
+    {
+      "id": 1,
+      "role": "Student",
+      "goal": "add a coursework task with deadline and importance",
+      "benefit": "I can make the planning context explicit"
+    },
+    {
+      "id": 2,
+      "role": "Student",
+      "goal": "receive a prioritised action strategy",
+      "benefit": "I can focus on the highest-value next steps"
+    },
+    {
+      "id": 3,
+      "role": "Student",
+      "goal": "see risk flags and milestones",
+      "benefit": "I can reduce deadline and quality risks"
+    },
+    {
+      "id": 4,
+      "role": "Module Tutor",
+      "goal": "inspect generated SDLC and UML artifacts",
+      "benefit": "I can evaluate whether software design and modelling were applied"
+    },
+    {
+      "id": 5,
+      "role": "Deployment Engineer",
+      "goal": "run tests and deploy the Flask website",
+      "benefit": "I can demonstrate CI/CD and deployment readiness"
+    }
+  ]
+}
+

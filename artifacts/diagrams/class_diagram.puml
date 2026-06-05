@@ -1,0 +1,34 @@
+@startuml
+class CourseworkTask {
+  +title: str
+  +deadline: str
+  +importance: int
+  +complexity: int
+  +estimated_hours: float
+  +notes: str
+}
+
+class StrategyEngine {
+  +validate_task_payload(payload)
+  +analyze_task(task)
+  +generate_sdlc_documents(tasks)
+}
+
+class FlaskAPI {
+  +GET /health
+  +POST /api/tasks
+  +POST /api/strategy
+  +POST /api/sdlc-documents
+}
+
+class BrowserUI {
+  +submitTask()
+  +renderStrategy()
+  +renderDocuments()
+}
+
+BrowserUI --> FlaskAPI
+FlaskAPI --> StrategyEngine
+StrategyEngine --> CourseworkTask
+@enduml
+

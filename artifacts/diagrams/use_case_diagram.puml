@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+actor Student
+actor "AI Strategy Service" as AI
+actor "Deployment Engineer" as DevOps
+
+rectangle "AI Coursework Strategy Assistant" {
+  usecase "Add Coursework Task" as UC1
+  usecase "Analyse Priority" as UC2
+  usecase "Generate Action Plan" as UC3
+  usecase "Create SDLC Documents" as UC4
+  usecase "Review UML Artifacts" as UC5
+  usecase "Run CI Tests" as UC6
+  usecase "Deploy Website" as UC7
+}
+
+Student -- UC1
+Student -- UC2
+Student -- UC3
+Student -- UC4
+Student -- UC5
+AI -- UC2
+AI -- UC3
+AI -- UC4
+DevOps -- UC6
+DevOps -- UC7
+UC3 ..> UC2 : <<include>>
+UC4 ..> UC1 : <<include>>
+@enduml
+
