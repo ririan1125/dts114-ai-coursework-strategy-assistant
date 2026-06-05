@@ -1,0 +1,11 @@
+services:
+  coursework-assistant:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "5005:5005"
+    environment:
+      - DEEPSEEK_API_BASE=https://api.deepseek.com
+      - DEEPSEEK_MODEL=deepseek-chat
+
